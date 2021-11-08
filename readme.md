@@ -4,11 +4,13 @@
 
 Simple Example how to implements [PSR-3 Logger Interface](https://www.php-fig.org/psr/psr-3/). 
 
-``composer require psr/log:1.1.4``
+```shell script
+composer require psr/log:1.1.4
+```
 
 ## Example
 
-````
+```php
 $log = new Logger\Logger(
     new \Logger\writers\FileWriter('default.log'),
     new \Logger\Formater()
@@ -23,21 +25,27 @@ $log->notice("Notice message");
 $log->warning("Warning message");
 $log->critical("Critical message");
 $log->emergency("Emergency message");
-````
+```
 
 ## Formater
 
 Format date:
 
-``private $dateFormat = 'Y-m-d H:i:s';``
+```php
+private $dateFormat = 'Y-m-d H:i:s';
+```
 
 Message template:
 
-``private $template = "{date} {level} {message} {context}";``
+```php
+private $template = "{date} {level} {message} {context}";
+```
 
 Transformation $context array in string line:
 
-``public function arrayToString(array $context = [])``
+```php
+public function arrayToString(array $context = [])
+```
 
 
 
